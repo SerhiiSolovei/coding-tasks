@@ -17,4 +17,9 @@ function formatNumber(number) {
   return result;
 }
 
+function formatNumber2(number) {
+  return String(number).split("").join(" ");
+}
+
 console.log(formatNumber(093242375812));
+console.log(formatNumber2(093242375812));
