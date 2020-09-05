@@ -6,7 +6,7 @@
  * Условие: Неалфавитные символы — знаки препинания, пробелы, цифры — не меняются.
  */
 
-const alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+export const alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
 const normalAlphabet = "абвгдеєжзиіїйклмнопрстуфхцчшщьюя";
 
 function transformStringToArray(string) {
@@ -18,7 +18,7 @@ function transformStringToArray(string) {
   return array;
 }
 
-function caesarCipher(text, shift = 3) {
+export function caesarCipher(text, shift = 3) {
   const alphabetArray = alphabet.split("");
   let result = "";
   for (let i = 0; i < text.length; i++) {
@@ -38,5 +38,5 @@ function caesarCipher(text, shift = 3) {
   return result;
 }
 
-const encryptedText = caesarCipher("Санёк ни за что не узнает что он ублюдок"); // Фгрин рл кг ъхс рз цкргзх ъхс ср ...
-console.log(encryptedText);
+const encryptedText = caesarCipher("Санёк ни за что не узнает что он ..."); // Фгрин рл кг ъхс рз цкргзх ъхс ср ...
+// console.log(encryptedText);
