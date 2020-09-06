@@ -9,3 +9,5 @@
  */
 
 "Алфавит".toLowerCase(); // 'алфавит'
+
+console.log("AlpHabEt".toLowerCase()); // "alphabet"
