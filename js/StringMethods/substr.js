@@ -14,4 +14,15 @@
 
 const str = "Яблоко, Банан, Киви";
 
-str.substring(7, 6); // 'Банан'
+str.substr(8, 5); // 'Банан'
+
+const newStr = "Apple, Banana, Kiwi!";
+
+console.log(newStr.substr(0)); // "Apple, Banana, Kiwi!"
+console.log(newStr.substr(15, 4)); // "Kiwi"
+console.log(newStr.substr(-1)); // "!"
+console.log(newStr.substr(-1, -1)); // ""
+console.log(newStr.substr(0, -1)); // ""
+console.log(newStr.substr(8, -1)); // ""
+console.log(newStr.substr(15, 15)); // "Kiwi!"
+console.log(newStr.substr(-5)); // "Kiwi!"
