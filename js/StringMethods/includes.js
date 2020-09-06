@@ -17,4 +17,10 @@ str.includes("несуществующий"); // false
 str.includes("Быть", 1); // false
 str.includes("БЫТЬ"); // false
 
-// Your code here
+const newStr = "To be or not to be";
+
+console.log(newStr.includes("To")); // true
+console.log(newStr.includes("Be")); //false
+console.log(newStr.includes("or")); // true
+console.log(newStr.includes("To", 1)); // false
+console.log(newStr.includes("be", 3)); // true
