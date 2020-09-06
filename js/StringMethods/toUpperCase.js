@@ -9,3 +9,7 @@
  */
 
 "алфавит".toUpperCase(); // 'АЛФАВИТ'
+
+const text = "alpHAbet";
+
+console.log(text.toUpperCase()); // "ALPHABET"
