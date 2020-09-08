@@ -15,3 +15,13 @@ const numObj = 12345.6789;
 numObj.toFixed(); // '12346' - обратите внимание на округление, дробной части нет
 numObj.toFixed(1); // '12345.7' - обратите внимание на округление
 numObj.toFixed(6); // '12345.678900' - обратите внимание на дополнение нулями
+
+const num = 12345678.65317;
+const anotherNum = 234.88999;
+
+console.log(num.toFixed(0)); // 123456786
+console.log(num.toFixed(1)); // 12345678.7
+// console.log(num.toFixed(-1)); // RangeError
+
+console.log(anotherNum.toFixed(2)); // 234.89
+console.log(anotherNum.toFixed(3)); // 234.890
