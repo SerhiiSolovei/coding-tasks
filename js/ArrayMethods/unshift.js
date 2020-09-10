@@ -16,3 +16,9 @@ arr.unshift(-2, -1); // = 5
 
 arr.unshift([-3]);
 // arr равен[[-3], -2, -1, 0, 1, 2]
+
+const newArr = [1, 2, 3, 4, 5];
+
+newArr.unshift([-2, -1, 0]); //  [[-2, -1, 0], 1, 2, 3, 4, 5]
+
+console.log(newArr);
