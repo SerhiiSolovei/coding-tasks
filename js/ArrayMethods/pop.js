@@ -15,3 +15,8 @@ const popped = myFish.pop();
 console.log(myFish); // ['ангел', 'клоун', 'мандарин']
 
 console.log(popped); // 'хирург'
+
+const myArr = ["ангел", "клоун", "мандарин", "хирург", "кот", "машина"];
+
+console.log(myArr.pop()); //  "машина";
+console.log(myArr); //  "ангел", "клоун", "мандарин", "хирург", "кот";
