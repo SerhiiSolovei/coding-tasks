@@ -32,3 +32,15 @@ const removed3 = myFish.splice(2, 1, "trumpet");
 
 console.log(myFish3); // myFish3 равен ["angel", "clown", "trumpet", "sturgeon"]
 console.log(removed3); // removed3 равен ["drum"]
+
+const myFish4 = ["angel", "clown", "mandarin", "sturgeon"];
+const removed4 = myFish.splice(-2, 1);
+
+console.log(myFish4); // myFish равен ["angel", "clown", "sturgeon"]
+console.log(removed4); // removed равен s ["mandarin"]
+
+const myFish5 = ["angel", "clown", "mandarin", "sturgeon"];
+const removed5 = myFish.splice(2);
+
+console.log(myFish5); // myFish равен ["angel", "clown"]
+console.log(removed5); // removed равен ["mandarin", "sturgeon"]
