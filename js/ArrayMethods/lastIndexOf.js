@@ -20,3 +20,11 @@ array.lastIndexOf(2, 3); // 3
 array.lastIndexOf(2, 2); // 0
 array.lastIndexOf(2, -2); // 0
 array.lastIndexOf(2, -1); // 3
+
+const newArr = [1, 2, 3, 3, 2, 1];
+
+console.log(newArr.lastIndexOf(1)); // 5
+console.log(newArr.lastIndexOf(1, 4)); // 0
+console.log(newArr.lastIndexOf(3)); // 3
+console.log(newArr.lastIndexOf(3, 4)); // 3
+console.log(newArr.lastIndexOf(3, 2)); // 2
