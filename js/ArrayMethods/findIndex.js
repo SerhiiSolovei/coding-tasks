@@ -14,20 +14,17 @@ import { generateArray } from "../../utils/generateNumberArray.js";
  * Пример:
  */
 
-[1, 3, 5, 7, 8].find(function (element, index, array) {
-  const isEven = element % 2 === 0;
-  if (isEven) {
-    return true;
-  } else {
-    return false;
-  }
-}); // 4
+[1, 3, 5, 7, 8].findIndex((element) => element % 2 === 0); // 4
 
-function isPrime(element, index, array) {
+function isPrime(element) {
   if (element <= 1) return false;
   else if (element === 2) return true;
   else {
-    for (let i = 2; i < element; i++) if (element % i === 0) return false;
+    for (let i = 2; i < element; i++) {
+      if (element % i === 0) {
+        return false;
+      }
+    }
     return true;
   }
 }
@@ -42,5 +39,5 @@ function isPrime(element, index, array) {
  */
 
 const randomValues = generateArray(10);
-
-console.log(randomValues);
+const indexOfOddValue = randomValues.findIndex((element) => element % 2 !== 0);
+console.log(randomValues, indexOfOddValue);
