@@ -1,4 +1,5 @@
 import { generateArray } from "../../utils/generateNumberArray.js";
+import { isPrime } from "../../utils/isPrime.js";
 /**
  * .findIndex() - возвращает индекс в массиве, если элемент удовлетворяет условию проверяющей функции. В противном случае возвращается -1.
  *
@@ -15,19 +16,6 @@ import { generateArray } from "../../utils/generateNumberArray.js";
  */
 
 [1, 3, 5, 7, 8].findIndex((element) => element % 2 === 0); // 4
-
-function isPrime(element) {
-  if (element <= 1) return false;
-  else if (element === 2) return true;
-  else {
-    for (let i = 2; i < element; i++) {
-      if (element % i === 0) {
-        return false;
-      }
-    }
-    return true;
-  }
-}
 
 [4, 6, 8, 12].findIndex(isPrime); // -1
 [4, 6, 7, 12].findIndex(isPrime); // 2

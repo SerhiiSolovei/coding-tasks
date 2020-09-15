@@ -1,6 +1,6 @@
-import { generateArray } from "../../utils/generateNumberArray.js";
+import { isPrime } from "../../utils/isPrime.js";
 /**
- * .filter() - создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции.
+ * .filter() - создаёт НОВЫЙ!!! массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции.
  *
  * (По сути функция фильтрует элементы через функцию и отдаёт все значения, при прохождении которых через функцию возвращается true.)
  *
@@ -32,15 +32,6 @@ function isBigEnough(value) {
 const filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
 console.log(filtered); // [12, 130, 44]
 
-function isPrime(element, index, array) {
-  if (element <= 1) return false;
-  else if (element === 2) return true;
-  else {
-    for (let i = 2; i < element; i++) if (element % i === 0) return false;
-    return true;
-  }
-}
-
 const values = [4, 6, 8, 9, 12, 53, -17, 2, 5, 7, 31, 97, -1, 17];
 
 console.log(values.filter(isPrime)); // [53, 2, 5, 7, 31, 97, 17]
@@ -51,7 +42,8 @@ const users = [
   { id: 3, name: "Маша" },
 ];
 
-users.filter((user) => user.id < 3); // [{id: 1, name: "Вася"}, {id: 2, name: "Петя"}]
+console.log(users.filter((user) => user.id < 3)); // [{id: 1, name: "Вася"}, {id: 2, name: "Петя"}]
+console.log(users.filter((user) => user.name.includes("а"))); // // [{id: 1, name: "Вася"}, {id: 3, name: "Маша"}]
 
 /**
  * Задача
@@ -78,7 +70,8 @@ const data = [
   },
 ];
 
-const newData = data.filter(/* Your code here */); //
+const newData = data.filter((item) => item.population > 500000000); //
+console.log(newData);
 
 /**
  * Задача
@@ -88,9 +81,9 @@ const newData = data.filter(/* Your code here */); //
 
 const fruits = ["apple", "banana", "grapes", "mango", "orange"];
 
-function filterItems(query) {
-  // you code here
-}
+const filterItems = (query) => fruits.filter((fruit) => fruit.includes(query));
 
 const result = filterItems("ap"); // ['apple', 'grapes']
 const result2 = filterItems("an"); // ['banana', 'mango', 'orange']
+
+console.log(result, result2);

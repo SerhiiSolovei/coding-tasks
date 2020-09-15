@@ -1,4 +1,5 @@
 import { generateArray } from "../../utils/generateNumberArray.js";
+import { isPrime } from "../../utils/isPrime.js";
 /**
  * .find() - возвращает значение первого найденного в массиве элемента, которое удовлетворяет условию переданному в callback функции.
  * В противном случае возвращается undefined.
@@ -19,19 +20,6 @@ import { generateArray } from "../../utils/generateNumberArray.js";
 
 [4, 6, 8, 12].find(isPrime); // undefined
 console.log([4, 5, 8, 12, 15].find((element) => isPrime(element))); // 5
-
-function isPrime(element) {
-  if (element <= 1) return false;
-  else if (element === 2) return true;
-  else {
-    for (let i = 2; i < element; i++) {
-      if (element % i === 0) {
-        return false;
-      }
-    }
-    return true;
-  }
-}
 
 /**
  * Задача
