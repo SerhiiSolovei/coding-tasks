@@ -10,9 +10,10 @@ const LEFT_BOUNDARY = -10;
 const RIGHT_BOUNDARY = 10;
 
 const generatePoints = (amount) => {
-  return Array.from({ length: amount }).map(() =>
-    generateRandomNumber(LEFT_BOUNDARY, RIGHT_BOUNDARY)
-  );
+  return Array.from({ length: amount }).map(() => ({
+    x: generateRandomNumber(LEFT_BOUNDARY, RIGHT_BOUNDARY),
+    y: generateRandomNumber(LEFT_BOUNDARY, RIGHT_BOUNDARY),
+  }));
 };
 
 const generateSelectedArea = () => {
@@ -40,29 +41,9 @@ const generateSelectedArea = () => {
   };
 };
 
-console.log(generatePoints(20), generateSelectedArea());
+const points = generatePoints(5);
 
-const points = [
-  { x: 0, y: 0 },
-  { x: 5, y: 8 },
-  { x: 2, y: 4 },
-  { x: 1, y: 6 },
-  { x: 4, y: 8 },
-  { x: 7, y: 7 },
-  { x: 4, y: 1 },
-  { x: 6, y: 3 },
-];
-
-const selectedArea = {
-  start: {
-    x: 5,
-    y: 8,
-  },
-  end: {
-    x: 8,
-    y: 5,
-  },
-};
+const selectedArea = generateSelectedArea();
 
 const getSelectedPoints = function (points, selectedArea) {
   const leftBoundary = selectedArea.start.x;
@@ -78,4 +59,6 @@ const getSelectedPoints = function (points, selectedArea) {
     );
   });
 };
+
+console.log(points, selectedArea);
 console.log(getSelectedPoints(points, selectedArea));
