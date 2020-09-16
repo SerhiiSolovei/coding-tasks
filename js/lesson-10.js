@@ -26,3 +26,5 @@ const selectedArea = {
     y: 8,
   },
 };
+
+const getSelectedPoints = (points, selectedArea) => {};
