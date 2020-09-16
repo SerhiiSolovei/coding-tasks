@@ -1,4 +1,5 @@
 import { generateArray } from "../../utils/generateNumberArray.js";
+import { isPrime } from "../../utils/isPrime.js";
 /**
  * .some() - проверяет, удовлетворяет ли какой-либо элемент массива условию, заданному в передаваемой функции.
  *
@@ -25,8 +26,9 @@ const isContainsEven = [1, 2, 3, 4, 5].some((element) => element % 2 === 0); // 
  * Воспользоваться методом .some() для проверки массива на наличие простых чисел
  */
 
-const randomValues = generateArray(10);
-const isContainsPrime = randomValues.some(/* Your code here */);
+const randomValues = generateArray(5);
+const isContainsPrime = randomValues.some((element) => isPrime(element));
+// console.log(randomValues, isContainsPrime);
 
 /**
  * Задача
@@ -34,9 +36,9 @@ const isContainsPrime = randomValues.some(/* Your code here */);
  * Написать свою версию метода includes - функцию myIncludes которая проверяет массив на наличие переданного значения
  */
 
-const myIncludes = (array, value) => {};
+const myIncludes = (array, value) => array.some((element) => element === value);
 
 const fruits = ["apple", "banana", "mango", "guava"];
 
-myIncludes(fruits, "mango"); // true
-myIncludes(fruits, "peach"); // false
+console.log(myIncludes(fruits, "mango")); // true
+console.log(myIncludes(fruits, "peach")); // false
