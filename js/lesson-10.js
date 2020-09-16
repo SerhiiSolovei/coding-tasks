@@ -19,12 +19,26 @@ const points = [
 const selectedArea = {
   start: {
     x: 5,
-    y: 5,
+    y: 8,
   },
   end: {
     x: 8,
-    y: 8,
+    y: 5,
   },
 };
 
-const getSelectedPoints = (points, selectedArea) => {};
+const getSelectedPoints = function (points, selectedArea) {
+  const leftBoundary = selectedArea.start.x;
+  const rightBoundary = selectedArea.end.x;
+  const bottomBoundary = selectedArea.end.y;
+  const topBoundary = selectedArea.start.y;
+  return points.filter(function (item) {
+    return (
+      item.x >= leftBoundary &&
+      item.x <= rightBoundary &&
+      item.y >= bottomBoundary &&
+      item.y <= topBoundary
+    );
+  });
+};
+console.log(getSelectedPoints(points, selectedArea));
