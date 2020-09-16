@@ -27,9 +27,9 @@
 
 const onlineUsers = [
   { id: 1, name: "Alex", permission: "viewer" },
-  { id: 2, name: "Serghii", permission: "admin" },
+  { id: 2, name: "Serhii", permission: "admin" },
   { id: 3, name: "Vadym", permission: "moderator" },
-  { id: 4, name: "Daryna", permission: "viewer" },
+  { id: 4, name: "Victoria", permission: "viewer" },
   { id: 5, name: "Artem", permission: "viewer" },
   { id: 6, name: "Vitalii", permission: "viewer" },
 ];
@@ -39,3 +39,14 @@ const permissions = [
   { id: 2, name: "moderator", isAllowed: true },
   { id: 3, name: "viewer", isAllowed: false },
 ];
+
+const checkAllUsersAccess = () => {
+  return onlineUsers.every(function (user) {
+    const permissionInfo = permissions.find(function (item) {
+      return user.permission === item.name;
+    });
+    return permissionInfo.isAllowed;
+  });
+};
+
+console.log(checkAllUsersAccess());
