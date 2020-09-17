@@ -1,6 +1,6 @@
 import { generateArray } from "../../utils/generateNumberArray.js";
 /**
- * .map() - создаёт новый массив с результатом вызова указанной функции для каждого элемента массива.
+ * .map() - создаёт НОВЫЙ!!!!!!!!! массив с результатом вызова указанной функции для каждого элемента массива.
  *
  * Метод map является одним из наиболее полезных и часто используемых.
  *
@@ -31,6 +31,13 @@ const users = [
   { name: "otter", age: 18 },
 ];
 
+const updatedUsers = users.map((user) => {
+  user.likes = user.name.length * user.age;
+  return user;
+});
+
+// console.log(updatedUsers);
+
 /**
  * Задача
  *
@@ -55,3 +62,18 @@ const orders = [
   { id: 9, productId: 3 },
   { id: 10, productId: 1 },
 ];
+
+const totalAmount = (products, orders) => {
+  const prices = orders.map((order) => {
+    const product = products.find((product) => product.id === order.productId);
+    return product.price;
+  });
+  let sumOfPrices = 0;
+
+  prices.forEach((price) => {
+    sumOfPrices = sumOfPrices + price;
+  });
+  return sumOfPrices;
+};
+
+console.log(totalAmount(products, orders));
