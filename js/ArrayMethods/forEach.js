@@ -14,7 +14,7 @@ import { generateArray } from "../../utils/generateNumberArray.js";
 
 const array = ["a", "b", "c"];
 
-array.forEach((element) => console.log(element));
+array.forEach((element) => console.log(element)); //
 
 const items = ["item1", "item2", "item3"];
 const copy = [];
@@ -34,6 +34,10 @@ console.log(copy); // ["item1", "item2", "item3"];
 
 const newArray = generateArray(10);
 
+newArray.forEach((element, index) =>
+  console.log("Элемент: " + element + ", Индекс: " + index)
+);
+
 /**
  *
  * Задача
@@ -43,6 +47,17 @@ const newArray = generateArray(10);
 
 const newArray2 = generateArray(10);
 
-const distinctNumberToEvenAndOdds = (someArray) => {};
+const distinctNumberToEvenAndOdds = (someArray) => {
+  const odd = [];
+  const even = [];
+  someArray.forEach((element) => {
+    if (element % 2 === 0) {
+      even.push(element);
+    } else {
+      odd.push(element);
+    }
+  });
+  return { odd: odd, even: even };
+};
 
-distinctNumberToEvenAndOdds(newArray2); // {odd: [...oddNumbers], even: [...evenNumbers]}
+console.log(distinctNumberToEvenAndOdds(newArray2)); // {odd: [...oddNumbers], even: [...evenNumbers]}
