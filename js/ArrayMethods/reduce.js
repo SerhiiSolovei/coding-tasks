@@ -83,8 +83,18 @@ console.log(fruitsCount); // { banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1
 
 const randomValues = generateArray(10);
 
-const result = randomValues.reduce();
+const result = randomValues.reduce((acc, number) => {
+  if (number > 0 && number < 20) {
+    acc = acc + number;
+  }
+  return acc;
+}, 0);
 
+const newResult = randomValues
+  .filter((number) => number > 0 && number < 20)
+  .reduce((acc, item) => acc + item, 0);
+
+console.log(randomValues, result, newResult);
 /**
  * Задача
  *
@@ -102,8 +112,14 @@ const colors = [
   "red",
 ];
 
-colors.reduce(); // [ 'blue', 'red', 'green', 'black', 'orange']
+const uniqueColors = colors.reduce((unique, color) => {
+  if (!unique.includes(color)) {
+    unique.push(color);
+  }
+  return unique;
+}, []); // [ 'blue', 'red', 'green', 'black', 'orange']
 
+console.log(uniqueColors);
 /**
  *
  * Задача
@@ -113,4 +129,8 @@ colors.reduce(); // [ 'blue', 'red', 'green', 'black', 'orange']
 
 const randomValues2 = generateArray(10);
 
-const result2 = randomValues.reduce();
+const result2 = randomValues2.reduce((maxValue, currentValue) => {
+  return currentValue > maxValue ? currentValue : maxValue;
+});
+
+console.log(randomValues2, result2);
