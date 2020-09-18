@@ -37,8 +37,15 @@ const friends = [
   { name: "Alice", books: ["The Lord of the Rings", "The Shining"], age: 18 },
 ];
 
-const allBooks = friends.reduce(function (prev, curr) {
-  return [...prev, ...curr.books];
+const allBooks = friends.reduce(function (acc, friend) {
+  friend.books.forEach((book) => {
+    acc.push(book);
+  });
+  return acc;
+}, []);
+
+const allBooks2 = friends.reduce(function (acc, friend) {
+  return [...acc, ...friend.books];
 }, []);
 
 // Пример:
@@ -58,10 +65,10 @@ const fruitBasket = [
 ];
 
 const fruitsCount = fruitBasket.reduce((counts, fruit) => {
-  if (!counts[fruit]) {
-    counts[fruit] = 1;
-  } else {
+  if (counts[fruit]) {
     counts[fruit] = counts[fruit] + 1;
+  } else {
+    counts[fruit] = 1;
   }
   return counts;
 }, {});
