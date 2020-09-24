@@ -16,7 +16,9 @@
  */
 
 const ms = Date.parse("2012-01-26T13:51:50.417-07:00"); // 1327611110417 (таймстамп)
+const msUTC = Date.parse("2012-01-26T13:51:50.417Z");
 
+console.log(ms, msUTC);
 // Можно тут же создать объект new Date из таймстампа:
 
 const date = new Date(Date.parse("2012-01-26T13:51:50.417-07:00"));
