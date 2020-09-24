@@ -25,8 +25,28 @@ console.log(`Цикл отработал за ${end - start} миллисеку�
  * Сколько секунд осталось до завтра?
  */
 
-const getSecondsToTomorrow = () => {};
+const getSecondsToTomorrow = () => {
+  const now = new Date();
+  const tomorrow = new Date();
+  tomorrow.setHours(24, 0, 0, 0);
+  return Math.floor((tomorrow.getTime() - now.getTime()) / 1000);
+};
+
+console.log(getSecondsToTomorrow());
 
 // Например, если сейчас 23:00, то:
 
 getSecondsToTomorrow() === 3600;
+
+const getSecondsToTomorrow2 = () => {
+  const now = new Date();
+  const tomorrow = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate() + 1
+  );
+  console.log(now, tomorrow);
+  return Math.floor((tomorrow.getTime() - now.getTime()) / 1000);
+};
+
+console.log(getSecondsToTomorrow2());
